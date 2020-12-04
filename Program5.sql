@@ -1,0 +1,32 @@
+CREATE SCHEMA `class_exp5`;
+USE class_exp5;
+
+#Qa
+CREATE TABLE Class (
+	id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(50)
+);
+
+
+#Qb
+INSERT INTO Class (name) VALUES ("PRADEEP"), ("JANE"), ("NOAH");
+
+#Qc
+SELECT * FROM Class;
+
+#Qd
+START TRANSACTION;
+
+INSERT INTO Class (name) VALUES ("DAVID");
+ROLLBACK; 
+
+INSERT INTO Class (name) VALUES ("DAVID");
+COMMIT;
+
+START TRANSACTION;
+SAVEPOINT BeforeMandy;
+INSERT INTO Class (name) VALUES ("MANDY");
+ROLLBACK TO BeforeMandy;
+
+COMMIT;
+
