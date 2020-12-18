@@ -1,0 +1,30 @@
+CREATE SCHEMA `store_exp7`;
+USE store_exp7;
+
+#Q1
+CREATE TABLE STORE (
+    order_no INT PRIMARY KEY,
+    code VARCHAR(20),
+    item CHAR(20),
+    quantity INT,
+    price INT,
+    discount VARCHAR(5),
+    mrp INT
+);
+
+#Q2
+INSERT INTO STORE VALUES (550,'LL99','Bangle',20,10000,'20%',8000);
+INSERT INTO STORE VALUES (334,'SS55','Necklace',10,20000,'30%',18000);
+INSERT INTO STORE VALUES (556,'RR44','Earring',40,10000,'10%',9000);
+
+#Q3
+SELECT * FROM STORE;
+
+#Q4
+SELECT MOD(price,9) FROM STORE;
+
+#Q5
+SELECT POWER(price,2) FROM STORE;
+
+#Q6
+SELECT ROUND(price DIV 7) FROM STORE;
